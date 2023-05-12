@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-}
-
-module.exports = nextConfig
+  env: {
+    SENTIMENT_ANALISYS_API: process.env.SENTIMENT_ANALISYS_API,
+  },
+};
