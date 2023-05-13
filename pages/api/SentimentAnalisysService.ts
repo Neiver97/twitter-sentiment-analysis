@@ -1,8 +1,8 @@
-import {Sentiment} from "../../utils/Sentiment";
+import {SentimentRequest} from "@/utils/SentimentRequest";
 
 const sentimentAnalisisApi = process.env.SENTIMENT_ANALISYS_API ?? "";
 
-export default function SentimentAnalisysService(payload: Sentiment) {
+export default function SentimentAnalisysService(payload: SentimentRequest) {
   return fetch(sentimentAnalisisApi, {
     headers: {
       "Content-Type": "application/json"
