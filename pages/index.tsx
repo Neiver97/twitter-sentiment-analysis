@@ -38,15 +38,18 @@ const Home: NextPage = () => {
             setSentiment(sentimentResponse)
             
             if (sentimentResponse.positivePercentage) {
-              sentimentResponse.positivePercentage = sentimentResponse.positivePercentage * 100;
+              let number = sentimentResponse.positivePercentage * 100;
+              sentimentResponse.positivePercentage = Number(number.toFixed(2));
             }
             
             if (sentimentResponse.negativePercentage) {
-              sentimentResponse.negativePercentage = sentimentResponse.negativePercentage * 100;
+              let number = sentimentResponse.negativePercentage * 100;
+              sentimentResponse.negativePercentage = Number(number.toFixed(2));
             }
             
             if (sentimentResponse.neutralPercentage) {
-              sentimentResponse.neutralPercentage = sentimentResponse.neutralPercentage * 100;
+              let number = sentimentResponse.neutralPercentage * 100;
+              sentimentResponse.neutralPercentage = Number(number.toFixed(2));
             }
             
             if (sentimentResponse.sentiment == POSITIVE) {
