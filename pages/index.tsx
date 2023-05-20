@@ -10,6 +10,7 @@ import {NEGATIVE, NEUTRAL, POSITIVE} from "@/utils/SENTIMENTS";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [texto, setTexto] = useState("");
   const [textoGenerado, setTextoGenerado] = useState<boolean>(false);
   const [srcSentiment, setSrcSentiment] = useState<String>("");
@@ -23,12 +24,13 @@ const Home: NextPage = () => {
     setSrcSentiment("");
     setSentiment(new SentimentResponse());
     setLoading(true);
+    setError(false);
     
     let payload = new SentimentRequest();
     payload.text = texto;
     
     SentimentAnalisysService(payload).then(response => {
-      if (response.status === 200) {
+      if (response && response.status === 200) {
         response.json().then(body => {
           let sentimentResponse: SentimentResponse = body
           if (sentimentResponse) {
@@ -56,6 +58,8 @@ const Home: NextPage = () => {
             }
           }
         });
+      } else {
+        setError(true)
       }
     }).finally(() => setLoading(false))
   };
@@ -93,6 +97,9 @@ const Home: NextPage = () => {
                 disabled>
                 <LoadingDots color="white" style="large"/>
               </button>
+            )}
+            {error && (
+              <p className="text-red-600">There was a problem evaluating your feelings</p>
             )}
           </div>
           <div className="mt-5">

@@ -9,6 +9,7 @@ export default function SentimentAnalisysService(payload: SentimentRequest) {
     },
     method: "POST",
     body: JSON.stringify(payload),
+  }).catch(() => {
   });
 }
 

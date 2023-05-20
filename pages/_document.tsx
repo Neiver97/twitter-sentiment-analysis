@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico"/>
-          <title>Sentiment Analisys Clasification</title>
+          <title>Sentiment Analysis Clasification</title>
         </Head>
         <body>
         <Main/>
