@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   const [error, setError] = useState(false);
   const [texto, setTexto] = useState("");
   const [textoGenerado, setTextoGenerado] = useState<boolean>(false);
-  const [srcSentiment, setSrcSentiment] = useState<String>("");
+  const [srcSentiment, setSrcSentiment] = useState<string>("");
   const [sentiment, setSentiment] = useState<SentimentResponse>(new SentimentResponse());
   
   const bioRef = useRef<null | HTMLDivElement>(null);
