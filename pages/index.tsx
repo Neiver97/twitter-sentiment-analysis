@@ -116,7 +116,7 @@ const Home: NextPage = () => {
                 <div className="grid grid-cols-4 gap-x-10 my-10 items-center justify-center">
                   <div>
                     {srcSentiment && (
-                      <Image src={"${srcSentiment}"} alt={''} width={100} height={100}/>
+                      <Image src={srcSentiment} alt={''} width={100} height={100}/>
                     )}
                   </div>
                   <div>
