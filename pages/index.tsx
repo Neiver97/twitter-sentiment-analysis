@@ -113,10 +113,10 @@ const Home: NextPage = () => {
                     Your feelings were...
                   </h2>
                 </div>
-                <div className="grid grid-cols-4 gap-x-10 my-10 items-center justify-center">
-                  <div>
+                <div className="grid md:grid-cols-4 gap-x-10 my-10 items-center justify-center sm:grid-cols-1 items-center justify-center">
+                  <div className="flex justify-center">
                     {srcSentiment && (
-                      <Image src={srcSentiment} alt={''} width={100} height={100}/>
+                      <Image src={srcSentiment} alt={''} width={100} height={100} />
                     )}
                   </div>
                   <div>
